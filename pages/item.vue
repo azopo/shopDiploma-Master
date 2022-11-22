@@ -59,5 +59,17 @@
         </p>
       </div>
     </div>
+    <div>
+      <p class="text-primary-1 text-ad-[26] font-semibold mx-ad-[40]">
+        Характеристики товару Смартфон Xiaomi Redmi Note 11 6/128GB Graphite
+        Gray
+      </p>
+      <div>
+        <p class="text-light-1 bg-primary-1 p-ad-[10]">Екран</p>
+        <div class="border p-ad-[10] text-primary-1">
+          <span class="mr-ad-[30]">Діагональ:</span><span>6,43 AMOLED</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
