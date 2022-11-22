@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   css: ['~/assets/style/index.scss'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', 'nuxt-icon'],
   build: {
     // @ts-ignore
     extractCSS: true,
