@@ -1,0 +1,12 @@
+$maxWidth: 1920; // max layout width in px
+$minWidth: 320; // min layout width in px
+$containerWidth: 1365; // container width in px
+$pcFontSizeSize: 16; // default pc font size in px
+$mobFontSizeSize: 8; // default mobile font size in px
+:export {
+  maxWidth: $maxWidth;
+  minWidth: $minWidth;
+  containerWidth: $containerWidth;
+  pcFontSizeSize: $pcFontSizeSize;
+  mobFontSizeSize: $mobFontSizeSize;
+}

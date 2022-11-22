@@ -1,0 +1,17 @@
+@import 'adaptive';
+.container-fluid {
+  width: 100% !important;
+}
+.container-max {
+  @media screen and (min-width: $maxWidth + px) {
+    width: adaptive($maxWidth) !important;
+  }
+  @media screen and (max-width: $maxWidth + px) {
+    width: 100% !important;
+  }
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: adaptive($containerWidth) !important;
+}

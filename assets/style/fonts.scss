@@ -1,0 +1,8 @@
+@use 'sass:math';
+@import 'variables';
+
+// adaptive font size
+$fontSize: calc(
+        $mobFontSizeSize * 1px + ($pcFontSizeSize - $mobFontSizeSize) *
+        ((100vw - $minWidth * 1px) / ($maxWidth - $minWidth))
+);
