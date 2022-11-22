@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   css: ['~/assets/style/index.scss'],
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
   build: {
     // @ts-ignore
     extractCSS: true,
@@ -49,4 +49,15 @@ export default defineNuxtConfig({
   },
   store: false,
   telemetry: false,
+  image: {
+    dir: 'assets/images',
+    presets: {
+      image: {
+        modifiers: {
+          format: 'webp',
+          loading: 'lazy',
+        },
+      },
+    },
+  },
 })

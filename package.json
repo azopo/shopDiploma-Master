@@ -21,6 +21,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "pinia": "^2.0.23",
     "prettier": "^2.7.1",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "@nuxt/image-edge": "^1.0.0-27769790.4b27db3"
   }
 }
