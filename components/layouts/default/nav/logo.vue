@@ -4,7 +4,7 @@
       alt="logo"
       class="w-[100%] h-[100%] object-cover object-center"
       preset="image"
-      src="/1.jpg"
+      src="/layouts/default/nav/logo.png"
     />
   </div>
 </template>
