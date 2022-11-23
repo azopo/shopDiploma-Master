@@ -1,8 +1,16 @@
 <template>
   <nuxt-link
     to="/"
-    class="group hover:shadow-2xl h-full w-ad-[320] border border-gray-200 rounded-lg shadow-md flex flex-col items-center justify-center p-ad-[10] transition-all mb-ad-[20]"
+    class="relative group hover:shadow-2xl h-full w-ad-[320] border border-gray-200 rounded-lg shadow-md flex flex-col items-center justify-center p-ad-[10] transition-all mb-ad-[20]"
   >
+    <span
+      class="absolute top-[10px] left-[10px] uppercase rounded bg-primary-1 p-ad-[5] text-ad-[12] text-light-1"
+      >Акція</span
+    >
+    <Icon
+      class="absolute top-[10px] right-[10px] uppercase rounded text-ad-[20] text-primary-1 hover:text-primary-0"
+      name="ph:heart-thin"
+    />
     <div class="h-full w-ad-[200] mb-ad-[20]">
       <nuxt-img
         alt="logo"
