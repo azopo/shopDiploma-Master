@@ -1,6 +1,5 @@
 <template>
   <nuxt-link
-    to="/"
     class="relative group hover:shadow-2xl h-full w-ad-[320] border border-gray-200 rounded-lg shadow-md flex flex-col items-center justify-center p-ad-[10] transition-all mb-ad-[20]"
   >
     <span
@@ -30,9 +29,19 @@
       2999грн
     </p>
     <button
+      v-if="!admin"
       class="bg-primary-0 text-light-0 rounded w-ad-[200] h-ad-[50] uppercase text-ad-[20] font-semibold transition-all group-hover:bg-primary-1 group-hover:text-light-1 hover:font-bold"
     >
       Купити
     </button>
+    <lazy-pages-edit-btn v-else />
   </nuxt-link>
 </template>
+<script setup lang="ts">
+defineProps({
+  admin: {
+    type: Boolean,
+    default: false,
+  },
+})
+</script>
