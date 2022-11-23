@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     to="/"
-    class="group hover:shadow-2xl h-ad-[350] w-ad-[320] border border-gray-200 rounded-lg shadow-md flex flex-col items-center justify-center p-ad-[10] transition-all mb-ad-[20]"
+    class="group hover:shadow-2xl h-full w-ad-[320] border border-gray-200 rounded-lg shadow-md flex flex-col items-center justify-center p-ad-[10] transition-all mb-ad-[20]"
   >
     <div class="h-full w-ad-[200] mb-ad-[20]">
       <nuxt-img

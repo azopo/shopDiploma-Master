@@ -8,15 +8,15 @@
           <p class="text-primary-1 text-ad-[26]">Покупець</p>
           <input
             placeholder="ПІБ"
-            class="border p-ad-[10] text-primary-1 text-ad-[18]"
+            class="border p-ad-[10] text-primary-1 rounded text-ad-[18]"
           />
           <input
             placeholder="Номер телефону"
-            class="border p-ad-[10] text-primary-1 text-ad-[18]"
+            class="border p-ad-[10] text-primary-1 rounded text-ad-[18]"
           />
           <input
             placeholder="Електронна пошта"
-            class="border p-ad-[10] text-primary-1 text-ad-[18]"
+            class="border p-ad-[10] text-primary-1 rounded text-ad-[18]"
           />
         </div>
 
