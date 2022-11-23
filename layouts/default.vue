@@ -11,5 +11,7 @@
   <main>
     <slot />
   </main>
-  <footer>footer</footer>
+  <footer>
+    <lazy-layouts-default-footer />
+  </footer>
 </template>
