@@ -34,7 +34,7 @@
     >
       Купити
     </button>
-    <lazy-pages-edit-btn v-else />
+    <lazy-pages-edit-admin-create v-else />
   </nuxt-link>
 </template>
 <script setup lang="ts">

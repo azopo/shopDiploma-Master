@@ -3,9 +3,9 @@
     <div
       class="container flex items-center justify-between h-ad-[100] px-ad-[20]"
     >
-      <lazy-layouts-default-nav-logo />
-      <lazy-layouts-default-nav />
-      <lazy-layouts-default-nav-shop />
+      <!--      <lazy-layouts-default-nav-logo />-->
+      <!--      <lazy-layouts-default-nav />-->
+      <!--      <lazy-layouts-default-nav-shop />-->
     </div>
   </nav>
   <main>

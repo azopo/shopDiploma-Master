@@ -37,24 +37,24 @@
       </div>
       <div class="flex flex-col justify-center w-ad-[300]">
         <p class="text-primary-1 mb-ad-[10]">
-          <Icon
-            name="ic:baseline-check"
-            class="text-success-1 text-ad-[40] mr-ad-[5]"
-          />
+          <!--          <Icon-->
+          <!--            name="ic:baseline-check"-->
+          <!--            class="text-success-1 text-ad-[40] mr-ad-[5]"-->
+          <!--          />-->
           Самовивіз
         </p>
         <p class="text-primary-1 mb-ad-[10]">
-          <Icon
-            name="ic:baseline-check"
-            class="text-success-1 text-ad-[40] mr-ad-[5]"
-          />
+          <!--          <Icon-->
+          <!--            name="ic:baseline-check"-->
+          <!--            class="text-success-1 text-ad-[40] mr-ad-[5]"-->
+          <!--          />-->
           «Нова пошта»
         </p>
         <p class="text-primary-1">
-          <Icon
-            name="ic:baseline-check"
-            class="text-success-1 text-ad-[40] mr-ad-[5]"
-          />
+          <!--          <Icon-->
+          <!--            name="ic:baseline-check"-->
+          <!--            class="text-success-1 text-ad-[40] mr-ad-[5]"-->
+          <!--          />-->
           Доставка кур'єром «Нова пошта»
         </p>
       </div>

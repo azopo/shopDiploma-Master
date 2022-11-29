@@ -7,6 +7,22 @@
   >
     <template #title>Додати смартфон</template>
     <div>
+      <!--      <div>-->
+      <!--        <button-->
+      <!--          type="button"-->
+      <!--          class="btn btn-outline-dark me-4"-->
+      <!--          @click="setImage"-->
+      <!--        >-->
+      <!--          <i class="bi" :class="image ? 'bi-arrow-clockwise' : 'bi-plus'" />-->
+      <!--          {{ image ? 'Замінити ' + label : 'Додати ' + label }}-->
+      <!--        </button>-->
+      <!--        <img-->
+      <!--          v-if="image"-->
+      <!--          :src="image"-->
+      <!--          alt="Головне зображення"-->
+      <!--          :style="{ 'max-width': '300px', 'max-height': '300px' }"-->
+      <!--        />-->
+      <!--      </div>-->
       <Form id="user" @submit="submit">
         <div
           v-for="(item, i) in inputItems"
@@ -34,36 +50,8 @@
             :name="item.name"
             class="text-danger-1 uppercase font-semibold"
           />
-          <client-only>
-            <div v-if="item.fields" class="flex">
-              <div
-                v-for="(field, j) in item.fields"
-                :key="j"
-                class="w-full mr-ad-[20] last-of-type:mr-0"
-              >
-                <label
-                  :for="field.name"
-                  class="mb-ad-[5] text-primary-0 text-ad-[12]"
-                  >{{ field.label }}</label
-                >
-                <Field
-                  v-model="field.value"
-                  :name="field.name"
-                  :as="field.as"
-                  class="border text-primary-1 text-ad-[18] w-full rounded-lg p-ad-[10]"
-                  :type="field.type ? field.type : undefined"
-                  validate-on-input
-                  :placeholder="field.placeholder ? field.placeholder : ''"
-                  :rules="field.schema"
-                />
-                <ErrorMessage
-                  :name="field.name"
-                  class="text-danger-1 uppercase font-semibold"
-                />
-              </div>
-            </div>
-          </client-only>
         </div>
+        <lazy-pages-edit-admin-create-characteristics />
       </Form>
     </div>
     <template #footer>
@@ -102,32 +90,6 @@ const inputItems = [
     as: 'input',
     placeholder: '23999',
     schema: string().required("Обов'язкове поле"),
-  },
-  {
-    name: 'characteristics',
-    type: 'string',
-    label: 'Назва характиристики',
-    value: '',
-    as: 'input',
-    placeholder: 'Екран',
-    fields: [
-      {
-        name: 'key',
-        type: 'string',
-        label: 'Ключ',
-        value: '',
-        as: 'input',
-        placeholder: 'Діагональ',
-      },
-      {
-        name: 'value',
-        type: 'string',
-        label: 'Значення',
-        value: '',
-        as: 'input',
-        placeholder: '6,5 IPS',
-      },
-    ],
   },
 ]
 const submit = (value) => {
