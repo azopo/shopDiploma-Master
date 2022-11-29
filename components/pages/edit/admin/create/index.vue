@@ -7,22 +7,7 @@
   >
     <template #title>Додати смартфон</template>
     <div>
-      <!--      <div>-->
-      <!--        <button-->
-      <!--          type="button"-->
-      <!--          class="btn btn-outline-dark me-4"-->
-      <!--          @click="setImage"-->
-      <!--        >-->
-      <!--          <i class="bi" :class="image ? 'bi-arrow-clockwise' : 'bi-plus'" />-->
-      <!--          {{ image ? 'Замінити ' + label : 'Додати ' + label }}-->
-      <!--        </button>-->
-      <!--        <img-->
-      <!--          v-if="image"-->
-      <!--          :src="image"-->
-      <!--          alt="Головне зображення"-->
-      <!--          :style="{ 'max-width': '300px', 'max-height': '300px' }"-->
-      <!--        />-->
-      <!--      </div>-->
+      <lazy-pages-edit-admin-create-image @change-image="changeImage" />
       <Form id="user" @submit="submit">
         <div
           v-for="(item, i) in inputItems"
@@ -70,6 +55,7 @@
 <script setup lang="ts">
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { string } from 'yup'
+import { itemsStore } from '~/store/pages/edit/admin/items'
 
 const show = ref(false)
 const inputItems = [
@@ -92,8 +78,16 @@ const inputItems = [
     schema: string().required("Обов'язкове поле"),
   },
 ]
-const submit = (value) => {
-  console.log(value)
+const fieldValue: { [k: string]: any } = {}
+const changeImage = (file: File) => {
+  fieldValue.image = file
+}
+const submit = (value: object) => {
+  const { image, name, price, characteristics } = Object.assign(
+    value,
+    fieldValue
+  )
+  itemsStore().create(image, name, price, characteristics)
   show.value = false
 }
 </script>

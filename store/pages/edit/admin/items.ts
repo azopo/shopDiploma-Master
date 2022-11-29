@@ -2,17 +2,23 @@ import { defineStore } from 'pinia'
 
 export const itemsStore = defineStore('itemsStore', {
   actions: {
-    async create(email: string, password: string, role: string) {
+    async create(image, name, price, characteristics) {
       try {
-        await $fetch('/api/pages/edit/admin/items', {
+        const formData = new FormData()
+        formData.append('files', image)
+        await useFetch('/api/pages/edit/admin/upload', {
           method: 'POST',
-          body: {
-            email,
-            password,
-            role,
-          },
-        }).then((data) => {
-          console.log(data)
+          body: formData,
+        }).then(() => {
+          useFetch('/api/pages/edit/admin/items', {
+            method: 'POST',
+            body: {
+              image: image.name,
+              name,
+              price,
+              characteristics,
+            },
+          })
         })
       } catch (e: any) {
         console.log(e)

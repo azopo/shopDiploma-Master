@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@kyvg/vue3-notification": "^2.7.0",
     "@nuxt/image-edge": "^1.0.0-27827328.bc9ddc0",
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
@@ -18,18 +19,18 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "mongoose": "^6.7.4",
+    "multer": "^1.4.5-lts.1",
     "nuxt": "3.0.0",
     "nuxt-icon": "^0.1.7",
     "pinia": "^2.0.27",
     "prettier": "^2.8.0",
     "sass": "^1.56.1",
     "tailwindcss": "^3.2.4",
-    "vue-final-modal": "^3.4.11",
-    "mongoose": "^6.7.4",
-    "@kyvg/vue3-notification": "^2.7.0",
-    "multer": "^1.4.5-lts.1"
+    "vue-final-modal": "^3.4.11"
   },
   "dependencies": {
+    "@vueuse/core": "^9.6.0",
     "vee-validate": "^4.7.3",
     "yup": "^0.32.11"
   }

@@ -15,7 +15,7 @@ const pagesEditAdminItem = new mongoose.Schema({
   },
   characteristics: [
     {
-      title: {
+      name: {
         type: String,
       },
       fields: [

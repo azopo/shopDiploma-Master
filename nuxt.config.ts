@@ -13,7 +13,12 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/style/index.scss'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', 'nuxt-icon'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image-edge',
+    'nuxt-icon',
+    '@pinia/nuxt',
+  ],
   build: {
     // @ts-ignore
     extractCSS: true,

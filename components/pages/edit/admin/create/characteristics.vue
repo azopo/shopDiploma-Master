@@ -53,7 +53,7 @@
             <button
               v-show="i !== 0"
               type="button"
-              class="peer-hover: w-ad-[50] h-full bg-danger-1 rounded ml-ad-[10] text-secondary-1 hover:bg-danger-0 hover:text-secondary-0"
+              class="w-ad-[50] h-full bg-danger-1 rounded ml-ad-[10] text-secondary-1 hover:bg-danger-0 hover:text-secondary-0"
               @click="remove(i)"
             >
               <Icon size="2rem" name="ic:baseline-restore-from-trash" />
