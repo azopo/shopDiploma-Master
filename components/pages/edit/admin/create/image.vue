@@ -10,20 +10,28 @@
         :name="image ? 'ic:baseline-edit' : 'ic:twotone-plus'"
       />
     </button>
-    <img
-      v-if="image"
-      :src="image"
-      alt="Головне зображення"
-      :style="{ 'max-width': '300px', 'max-height': '300px' }"
-    />
+    <div class="h-full w-ad-[200] mb-ad-[20]">
+      <nuxt-img
+        v-if="image"
+        alt="Головне зображення"
+        class="w-[100%] h-[100%] object-cover object-center"
+        preset="image"
+        :src="image"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useFileSystemAccess } from '@vueuse/core'
-
+const props = defineProps({
+  item: {
+    type: String,
+    default: '',
+  },
+})
 const emit = defineEmits(['changeImage'])
-const image = ref('')
+const image = ref(props.item.image ? props.item.image : '')
 const setImage = async () => {
   const { file, open } = useFileSystemAccess({
     types: [

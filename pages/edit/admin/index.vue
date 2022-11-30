@@ -1,7 +1,12 @@
 <template>
   <div class="container flex flex-col items-center px-ad-[50]">
     <div class="flex flex-wrap justify-between">
-      <lazy-pages-index-card v-for="i in items" :key="i" admin />
+      <lazy-pages-index-card
+        v-for="(item, i) in items"
+        :key="i"
+        admin
+        :item="item"
+      />
     </div>
     <lazy-pages-index-pagination />
   </div>

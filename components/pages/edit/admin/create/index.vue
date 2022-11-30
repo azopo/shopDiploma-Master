@@ -7,36 +7,39 @@
   >
     <template #title>Додати смартфон</template>
     <div>
-      <lazy-pages-edit-admin-create-image @change-image="changeImage" />
+      <lazy-pages-edit-admin-create-image
+        :item="item"
+        @change-image="changeImage"
+      />
       <Form id="user" @submit="submit">
         <div
-          v-for="(item, i) in inputItems"
+          v-for="(input, i) in inputItems"
           :key="i"
-          :class="item.fields ? 'border mt-ad-[20] p-ad-[10]' : ''"
+          :class="input.fields ? 'border mt-ad-[20] p-ad-[10]' : ''"
         >
           <label
-            :for="item.name"
+            :for="input.name"
             class="mb-ad-[5] text-primary-0 text-ad-[12]"
-            >{{ item.label }}</label
+            >{{ input.label }}</label
           >
           <client-only>
             <Field
-              v-model="item.value"
-              :name="item.name"
-              :as="item.as"
+              v-model="input.value"
+              :name="input.name"
+              :as="input.as"
               class="border text-primary-1 text-ad-[18] w-full rounded-lg p-ad-[10]"
-              :type="item.type ? item.type : undefined"
+              :type="input.type ? input.type : undefined"
               validate-on-input
-              :placeholder="item.placeholder ? item.placeholder : ''"
-              :rules="item.schema ? item.schema : undefined"
+              :placeholder="input.placeholder ? input.placeholder : ''"
+              :rules="input.schema ? input.schema : undefined"
             />
           </client-only>
           <ErrorMessage
-            :name="item.name"
+            :name="input.name"
             class="text-danger-1 uppercase font-semibold"
           />
         </div>
-        <lazy-pages-edit-admin-create-characteristics />
+        <lazy-pages-edit-admin-create-characteristics :item="item" />
       </Form>
     </div>
     <template #footer>
@@ -57,13 +60,20 @@ import { Form, Field, ErrorMessage } from 'vee-validate'
 import { string } from 'yup'
 import { itemsStore } from '~/store/pages/edit/admin/items'
 
+const props = defineProps({
+  item: {
+    type: Object,
+    // eslint-disable-next-line vue/require-valid-default-prop
+    default: {},
+  },
+})
 const show = ref(false)
 const inputItems = [
   {
     name: 'name',
     type: 'string',
     label: 'Назва',
-    value: '',
+    value: props.item ? props.item.name : '',
     as: 'input',
     placeholder: 'Смартфон Xiaomi Redmi 10 4/64GB Pebble White',
     schema: string().required("Обов'язкове поле"),
@@ -72,7 +82,7 @@ const inputItems = [
     name: 'price',
     type: 'string',
     label: 'Ціна',
-    value: '',
+    value: props.item ? props.item.price : '',
     as: 'input',
     placeholder: '23999',
     schema: string().required("Обов'язкове поле"),

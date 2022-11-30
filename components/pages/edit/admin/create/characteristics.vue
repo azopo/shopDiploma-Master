@@ -4,7 +4,7 @@
       <div class="flex flex-col w-full">
         <Field v-model="characteristics" name="characteristics">
           <div
-            v-for="(item, i) in characteristics"
+            v-for="(character, i) in characteristics"
             :key="i"
             class="flex w-full mt-ad-[15] border border-primary-1 rounded p-ad-[10]"
           >
@@ -15,7 +15,7 @@
                 >
                 <input
                   :id="i"
-                  v-model="item.name"
+                  v-model="character.name"
                   type="text"
                   placeholder="Екран"
                   class="border text-primary-1 text-ad-[18] w-full rounded-lg p-ad-[10]"
@@ -28,21 +28,19 @@
                   >
                   <input
                     :id="i"
-                    v-model="item.fields.key"
+                    v-model="character.fields.key"
                     type="text"
                     placeholder="Діагональ"
                     class="border text-primary-1 text-ad-[18] w-full rounded-lg p-ad-[10]"
                   />
                 </div>
                 <div class="w-full">
-                  <label
-                    :for="item.name"
-                    class="mb-ad-[5] text-primary-0 text-ad-[12]"
+                  <label :for="i" class="mb-ad-[5] text-primary-0 text-ad-[12]"
                     >Значення</label
                   >
                   <input
                     :id="i"
-                    v-model="item.fields.value"
+                    v-model="character.fields.value"
                     type="text"
                     placeholder="6,5 IPS"
                     class="border text-primary-1 text-ad-[18] w-full rounded-lg p-ad-[10]"
@@ -75,15 +73,25 @@
 <script setup lang="ts">
 import { Field } from 'vee-validate'
 
-const characteristics = ref([
-  {
-    name: '',
-    fields: {
-      key: '',
-      value: '',
-    },
+const props = defineProps({
+  item: {
+    type: String,
+    default: '',
   },
-])
+})
+const characteristics = ref(
+  props.item.characteristics
+    ? props.item.characteristics
+    : [
+        {
+          name: '',
+          fields: {
+            key: '',
+            value: '',
+          },
+        },
+      ]
+)
 
 const add = () => {
   characteristics.value.push({
