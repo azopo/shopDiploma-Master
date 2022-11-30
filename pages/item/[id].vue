@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <p class="text-primary-1 text-ad-[26] font-semibold mb-ad-[40]">
-      Смартфон Xiaomi Redmi Note 11 6/128GB Graphite Gray
+      {{ item.name }}
     </p>
     <div class="flex justify-between">
       <div class="h-full w-ad-[500]">
@@ -9,7 +9,7 @@
           alt="logo"
           class="w-[100%] h-[100%] object-cover object-center"
           preset="image"
-          src="/1.jpg"
+          :src="`/${item.image}`"
         />
       </div>
       <div
@@ -17,7 +17,7 @@
       >
         <div>
           <p class="text-success-1 text-ad-[14] mb-ad-[10]">В наявності</p>
-          <p class="text-primary-1 text-ad-[18] mb-ad-[10]">2999грн</p>
+          <p class="text-primary-1 text-ad-[18] mb-ad-[10]">{{ item.price }}</p>
           <label for="guarantee" class="text-primary-1 text-ad-[16]"
             >Гарантія</label
           >
@@ -64,12 +64,22 @@
         Характеристики товару Смартфон Xiaomi Redmi Note 11 6/128GB Graphite
         Gray
       </p>
-      <div>
-        <p class="text-light-1 bg-primary-1 p-ad-[10]">Екран</p>
+      <div v-for="(character, i) in item.characteristics" :key="i">
+        <p class="text-light-1 bg-primary-1 p-ad-[10]">{{ character.name }}</p>
         <div class="border p-ad-[10] text-primary-1">
-          <span class="mr-ad-[30]">Діагональ:</span><span>6,43 AMOLED</span>
+          <span class="mr-ad-[30]">{{ character.fields[0].key }}:</span
+          ><span>{{ character.fields[0].value }}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
+<script setup lang="ts">
+const route = useRoute()
+const { data } = await useAsyncData('item', () =>
+  $fetch(`/api/pages/item?id=${route.params.id}`, { method: 'GET' })
+)
+const item = computed(() => {
+  return data.value
+})
+</script>

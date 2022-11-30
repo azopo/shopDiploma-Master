@@ -1,5 +1,6 @@
 <template>
   <div class="container flex flex-col items-center px-ad-[50]">
+    <lazy-pages-edit-admin-create />
     <div class="flex flex-wrap justify-between">
       <lazy-pages-index-card
         v-for="(item, i) in items"

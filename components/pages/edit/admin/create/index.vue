@@ -1,7 +1,7 @@
 <template>
   <lazy-parts-modal
     v-model="show"
-    open-text="Редагувати"
+    :open-text="item ? 'Редагувати' : 'Додати'"
     @open="show = true"
     @close="show = false"
   >
@@ -63,8 +63,7 @@ import { itemsStore } from '~/store/pages/edit/admin/items'
 const props = defineProps({
   item: {
     type: Object,
-    // eslint-disable-next-line vue/require-valid-default-prop
-    default: {},
+    default: undefined,
   },
 })
 const show = ref(false)

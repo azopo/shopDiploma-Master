@@ -1,5 +1,6 @@
 <template>
   <nuxt-link
+    :to="'/item/' + item._id"
     class="relative group hover:shadow-2xl h-full w-ad-[320] border border-gray-200 rounded-lg shadow-md flex flex-col items-center justify-center p-ad-[10] transition-all mb-ad-[20]"
   >
     <span
