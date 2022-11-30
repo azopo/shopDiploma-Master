@@ -1,8 +1,22 @@
 import { defineStore } from 'pinia'
 
 export const itemsStore = defineStore('itemsStore', {
+  state: () => ({
+    page: 1,
+  }),
+  getters: {
+    getPage: (state) => state.page,
+  },
   actions: {
-    async create(image, name, price, characteristics) {
+    changePage(page: number) {
+      this.page = page
+    },
+    async create(
+      image: File,
+      name: string,
+      price: string,
+      characteristics: Object
+    ) {
       try {
         const formData = new FormData()
         formData.append('files', image)
