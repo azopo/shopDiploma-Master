@@ -33,6 +33,7 @@
     <button
       v-if="!admin"
       class="bg-primary-0 text-light-0 rounded w-ad-[200] h-ad-[50] uppercase text-ad-[20] font-semibold transition-all group-hover:bg-primary-1 group-hover:text-light-1 hover:font-bold"
+      @click.prevent="$router.push('/by/' + item._id)"
     >
       Купити
     </button>

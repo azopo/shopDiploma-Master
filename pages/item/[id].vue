@@ -17,7 +17,9 @@
       >
         <div>
           <p class="text-success-1 text-ad-[14] mb-ad-[10]">В наявності</p>
-          <p class="text-primary-1 text-ad-[18] mb-ad-[10]">{{ item.price }}</p>
+          <p class="text-primary-1 text-ad-[18] mb-ad-[10]">
+            {{ item.price }} грн
+          </p>
           <label for="guarantee" class="text-primary-1 text-ad-[16]"
             >Гарантія</label
           >

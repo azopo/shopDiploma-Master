@@ -104,16 +104,17 @@
               alt="logo"
               class="w-[100%] h-[100%] object-cover object-center"
               preset="image"
-              src="/1.jpg"
+              :src="`/${item.image}`"
             />
           </div>
           <div>
             <p class="text-primary-1 text-ad-[18] mb-ad-[20]">12 місяців</p>
             <p class="text-primary-1 text-ad-[18] mb-ad-[20]">
-              Смартфон Xiaomi Redmi Note 11 6/128GB Graphite Gray
+              {{ item.name }}
             </p>
             <p class="text-primary-1 text-ad-[18] mb-ad-[20]">
-              Всього до сплати <span class="font-semibold"> 8777 грн</span>
+              Всього до сплати
+              <span class="font-semibold"> {{ item.price }} грн</span>
             </p>
           </div>
         </div>
@@ -127,3 +128,12 @@
     </button>
   </div>
 </template>
+<script setup lang="ts">
+const route = useRoute()
+const { data } = await useAsyncData('item', () =>
+  $fetch(`/api/pages/item?id=${route.params.id}`, { method: 'GET' })
+)
+const item = computed(() => {
+  return data.value
+})
+</script>
