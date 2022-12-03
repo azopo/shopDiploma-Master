@@ -33,30 +33,31 @@
         </div>
         <button
           class="bg-primary-0 text-light-0 rounded w-ad-[200] h-ad-[50] uppercase text-ad-[20] font-semibold transition-all hover:bg-primary-1 hover:text-light-1 mt-ad-[50]"
+          @click.prevent="$router.push('/by/' + item._id)"
         >
           Купити
         </button>
       </div>
       <div class="flex flex-col justify-center w-ad-[300]">
         <p class="text-primary-1 mb-ad-[10]">
-          <!--          <Icon-->
-          <!--            name="ic:baseline-check"-->
-          <!--            class="text-success-1 text-ad-[40] mr-ad-[5]"-->
-          <!--          />-->
+          <Icon
+            name="ic:baseline-check"
+            class="text-success-1 text-ad-[40] mr-ad-[5]"
+          />
           Самовивіз
         </p>
         <p class="text-primary-1 mb-ad-[10]">
-          <!--          <Icon-->
-          <!--            name="ic:baseline-check"-->
-          <!--            class="text-success-1 text-ad-[40] mr-ad-[5]"-->
-          <!--          />-->
+          <Icon
+            name="ic:baseline-check"
+            class="text-success-1 text-ad-[40] mr-ad-[5]"
+          />
           «Нова пошта»
         </p>
         <p class="text-primary-1">
-          <!--          <Icon-->
-          <!--            name="ic:baseline-check"-->
-          <!--            class="text-success-1 text-ad-[40] mr-ad-[5]"-->
-          <!--          />-->
+          <Icon
+            name="ic:baseline-check"
+            class="text-success-1 text-ad-[40] mr-ad-[5]"
+          />
           Доставка кур'єром «Нова пошта»
         </p>
       </div>

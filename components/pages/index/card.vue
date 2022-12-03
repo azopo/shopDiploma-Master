@@ -28,7 +28,7 @@
     <p
       class="text-primary-0 font-semibold text-ad-[16] mb-ad-[10] transition-all group-hover:text-primary-1"
     >
-      {{ item.price }}
+      {{ item.price }} грн
     </p>
     <button
       v-if="!admin"
