@@ -70,7 +70,7 @@ const show = ref(false)
 const inputItems = [
   {
     name: 'name',
-    type: 'string',
+    type: 'text',
     label: 'Назва',
     value: props.item ? props.item.name : '',
     as: 'input',
@@ -79,7 +79,7 @@ const inputItems = [
   },
   {
     name: 'price',
-    type: 'string',
+    type: 'text',
     label: 'Ціна',
     value: props.item ? props.item.price : '',
     as: 'input',
