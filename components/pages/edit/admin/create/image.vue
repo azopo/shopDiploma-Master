@@ -26,12 +26,12 @@
 import { useFileSystemAccess } from '@vueuse/core'
 const props = defineProps({
   item: {
-    type: String,
-    default: '',
+    type: Object,
+    default: undefined,
   },
 })
 const emit = defineEmits(['changeImage'])
-const image = ref(props.item.image ? props.item.image : '')
+const image = ref(props.item ? props.item.image : '')
 const setImage = async () => {
   const { file, open } = useFileSystemAccess({
     types: [

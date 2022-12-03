@@ -1,7 +1,7 @@
 <template>
-  <!--  <nav class="relative">-->
-  <!--    <lazy-layouts-admin-nav class="absolute top-0 right-0" />-->
-  <!--  </nav>-->
+  <nav class="relative">
+    <lazy-layouts-admin-nav />
+  </nav>
   <main>
     <slot />
   </main>

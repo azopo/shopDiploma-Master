@@ -26,7 +26,7 @@
     </vue-final-modal>
     <button
       class="text-light-0 rounded w-ad-[200] h-ad-[50] p-ad-[5] bg-primary-0 uppercase text-ad-[20] font-semibold transition-all group-hover:bg-primary-1 group-hover:text-light-1"
-      @click="$emit('open')"
+      @click.prevent="$emit('open')"
     >
       <Icon
         v-if="openIcon"

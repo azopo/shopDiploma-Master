@@ -75,12 +75,12 @@ import { Field } from 'vee-validate'
 
 const props = defineProps({
   item: {
-    type: String,
-    default: '',
+    type: Object,
+    default: undefined,
   },
 })
 const characteristics = ref(
-  props.item.characteristics
+  props.item
     ? props.item.characteristics
     : [
         {
