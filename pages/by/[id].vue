@@ -96,9 +96,12 @@
 <script setup lang="ts">
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { string } from 'yup'
+import { useNotification } from '@kyvg/vue3-notification'
 import { orderStore } from '~/store/pages/by/order'
 
+const { notify } = useNotification()
 const route = useRoute()
+const router = useRouter()
 const { data } = await useAsyncData('item', () =>
   $fetch(`/api/pages/item?id=${route.params.id}`, { method: 'GET' })
 )
@@ -181,5 +184,11 @@ const radioInputItems = [
 ]
 const submit = ({ name, phone, email, delivery, pay }) => {
   orderStore().createOrder(name, phone, email, delivery, pay, item.value._id)
+  notify({
+    text: 'Замовлення успішно створено',
+    type: 'success',
+  })
+  router.push({ path: '/' })
+  window.open('https://secure.wayforpay.com/button/bd5352545bc72', '_blank')
 }
 </script>

@@ -58,8 +58,10 @@
 <script setup lang="ts">
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { string } from 'yup'
+import { useNotification } from '@kyvg/vue3-notification'
 import { itemsStore } from '~/store/pages/edit/admin/items'
 
+const { notify } = useNotification()
 const props = defineProps({
   item: {
     type: Object,
@@ -97,6 +99,10 @@ const submit = (value: object) => {
     fieldValue
   )
   itemsStore().create(image, name, price, characteristics)
+  notify({
+    text: props.item ? 'Відредаговано' : 'Створено',
+    type: 'success',
+  })
   show.value = false
 }
 </script>
